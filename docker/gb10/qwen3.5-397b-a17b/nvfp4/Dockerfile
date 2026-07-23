@@ -32,9 +32,9 @@ ENV CUDA_HOME=/usr/local/cuda
 
 WORKDIR /build
 
-# Dependencies are fetched from crates.io at build time (no vendored tree).
 COPY Cargo.toml Cargo.lock rust-toolchain.toml ./
 COPY crates/ crates/
+COPY vendor/ vendor/
 COPY kernels/ kernels/
 
 ENV ATLAS_TARGET_HW=gb10
